@@ -21,13 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let deck = Deck.init()
         print(deck)
         
-        deck.resetDeck()
+        deck.shuffle()
         print(deck)
         
-        for var count = 0; count < 52; count++ {
-            let card = deck.drawNextCard()
-            print("card \(card)")
-            print(deck)
+//        for var count = 0; count < 52; count++ {
+//            let card = deck.drawNextCard()
+//            print("card \(card)")
+//            print(deck)
+//        }
+        
+        let house = House.init(name: "House")
+        
+        house.cards.append(deck.drawCard())
+        house.cards.append(deck.drawCard())
+        print(house)
+        
+        while house.mustHit() {
+            house.cards.append(deck.drawCard())
+            print(house)
         }
         
         return true

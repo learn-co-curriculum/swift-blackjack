@@ -11,18 +11,16 @@ import Foundation
 class Card: CustomDebugStringConvertible {
     let suit : String
     let rank : String
-    var cardLabel = ""
-    var cardValue = 0
+    private(set) var cardLabel = ""
+    private(set) var cardValue: UInt = 0
     
-    var debugDescription = ""
+    var debugDescription: String { return self.cardLabel }
     
     init (suit: String, rank: String) {
         self.suit = suit
         self.rank = rank
         self.cardLabel = "\(suit)\(rank)"
         self.cardValue = determineCardValue(rank)
-        
-        self.debugDescription = self.cardLabel
     }
     
     class func validSuits() -> [String] {
@@ -33,12 +31,12 @@ class Card: CustomDebugStringConvertible {
         return ["A", "2", "3" ,"4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     }
 
-    func determineCardValue(rank: String) -> Int {
+    func determineCardValue(rank: String) -> UInt {
         switch rank {
         case "A":
             return 1
         case "2", "3", "4", "5", "6", "7", "8", "9", "10":
-            return Int(rank)!
+            return UInt(rank)!
         case "J", "Q", "K":
             return 10
         default:

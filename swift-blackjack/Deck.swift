@@ -9,10 +9,10 @@
 import Foundation
 
 class Deck: CustomDebugStringConvertible {
-    var remainingCards : [Card]
-    var dealtCards : [Card]
+    private var remainingCards : [Card]
+    private var dealtCards : [Card]
     
-    var debugDescription = ""
+    var debugDescription: String { return self.getDebugDescription() }
     
     init () {
         var cards : [Card] = []
@@ -24,52 +24,32 @@ class Deck: CustomDebugStringConvertible {
         }
         remainingCards = cards
         dealtCards = []
-        
-        self.updateDebugDescription()
     }
     
-    func updateDebugDescription() {
-        debugDescription = "Deck"
+    func getDebugDescription() -> String {
+        var debug = "Deck"
+        debug += "\n  remainingCards: "
+        debug += descriptionForCardArray(self.remainingCards)
+        debug += "\n  dealtCards: "
+        debug += descriptionForCardArray(self.dealtCards)
         
-        debugDescription += "\n  remainingCards: "
-        debugDescription += self.descriptionForCardArray(self.remainingCards)
-        
-        debugDescription += "\n  dealtCards: "
-        debugDescription += self.descriptionForCardArray(self.dealtCards)
+        return debug
     }
     
-    func descriptionForCardArray(cardArray: [Card]) -> String {
-        var description = "\(cardArray.count)"
-        var count = 0
-        for card in cardArray {
-            if count % 13 == 0 {
-                description += "\n   "
-            }
-            description += " \(card.debugDescription)"
-            count++
-        }
-        return description
-    }
     
-    func drawNextCard() -> Card {
+    func drawCard() -> Card {
         let card = self.remainingCards.removeFirst()
         self.dealtCards.append(card)
-        self.updateDebugDescription()
         return card
     }
     
-    func resetDeck() {
-        self.gatherDealtCards()
-        self.shuffleRemainingCards()
-        self.updateDebugDescription()
-    }
-    
-    private func gatherDealtCards() {
+    func shuffle() {
         self.remainingCards.appendContentsOf(self.dealtCards)
         self.dealtCards.removeAll()
+        self.reshuffle()
     }
     
-    private func shuffleRemainingCards() {
+    func reshuffle() {
         var shuffledCards : [Card] = []
         
         let limit = self.remainingCards.count
@@ -84,3 +64,18 @@ class Deck: CustomDebugStringConvertible {
         self.remainingCards = shuffledCards
     }
 }
+
+// where does this module function belong?
+func descriptionForCardArray(cardArray: [Card]) -> String {
+    var description = "\(cardArray.count)"
+    var count = 0
+    for card in cardArray {
+        if count % 13 == 0 {
+            description += "\n   "
+        }
+        description += " \(card.debugDescription)"
+        count++
+    }
+    return description
+}
+
