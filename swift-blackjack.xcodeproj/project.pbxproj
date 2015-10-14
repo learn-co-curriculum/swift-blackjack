@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D0105781BCEA255005224A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105771BCEA255005224A6 /* AppDelegate.swift */; };
-		4D01057A1BCEA255005224A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105791BCEA255005224A6 /* ViewController.swift */; };
 		4D01057D1BCEA255005224A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D01057B1BCEA255005224A6 /* Main.storyboard */; };
 		4D01057F1BCEA255005224A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01057E1BCEA255005224A6 /* Assets.xcassets */; };
 		4D0105821BCEA255005224A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0105801BCEA255005224A6 /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		4D0105741BCEA255005224A6 /* swift-blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-blackjack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0105771BCEA255005224A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D0105791BCEA255005224A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D01057C1BCEA255005224A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D01057E1BCEA255005224A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D0105811BCEA255005224A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,9 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0105771BCEA255005224A6 /* AppDelegate.swift */,
-				4D0105791BCEA255005224A6 /* ViewController.swift */,
-				4D01057B1BCEA255005224A6 /* Main.storyboard */,
 				4D01057E1BCEA255005224A6 /* Assets.xcassets */,
+				4D01057B1BCEA255005224A6 /* Main.storyboard */,
 				4D0105801BCEA255005224A6 /* LaunchScreen.storyboard */,
 				4D0105831BCEA255005224A6 /* Info.plist */,
 			);
@@ -255,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D01057A1BCEA255005224A6 /* ViewController.swift in Sources */,
 				4D0105781BCEA255005224A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +477,7 @@
 				4D01059E1BCEA255005224A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D01059F1BCEA255005224A6 /* Build configuration list for PBXNativeTarget "swift-blackjackTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +486,7 @@
 				4D0105A11BCEA255005224A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D0105A21BCEA255005224A6 /* Build configuration list for PBXNativeTarget "swift-blackjackUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +495,7 @@
 				4D0105A41BCEA255005224A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
