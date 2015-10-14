@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3147165D377F9DD8FCD32374 /* Pods_swift_blackjackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B0612B134632F9DFCB7425 /* Pods_swift_blackjackTests.framework */; };
 		4D0105781BCEA255005224A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105771BCEA255005224A6 /* AppDelegate.swift */; };
 		4D01057D1BCEA255005224A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D01057B1BCEA255005224A6 /* Main.storyboard */; };
 		4D01057F1BCEA255005224A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01057E1BCEA255005224A6 /* Assets.xcassets */; };
 		4D0105821BCEA255005224A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0105801BCEA255005224A6 /* LaunchScreen.storyboard */; };
 		4D01058D1BCEA255005224A6 /* swift_blackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01058C1BCEA255005224A6 /* swift_blackjackTests.swift */; };
 		4D0105981BCEA255005224A6 /* swift_blackjackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105971BCEA255005224A6 /* swift_blackjackUITests.swift */; };
+		4D0105A61BCEA5B6005224A6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105A51BCEA5B6005224A6 /* Card.swift */; settings = {ASSET_TAGS = (); }; };
+		4D0105A81BCECCBD005224A6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105A71BCECCBD005224A6 /* Deck.swift */; settings = {ASSET_TAGS = (); }; };
+		F00103A6E965E956916C86CA /* Pods_swift_blackjackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21C1781C9D3CF1E31C22AA0C /* Pods-swift-blackjackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-blackjackUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-blackjackUITests/Pods-swift-blackjackUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		25AA0035E2CEB1FBF9A9C406 /* Pods-swift-blackjackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-blackjackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-blackjackTests/Pods-swift-blackjackTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CD1CC524C2A6DEE231E8B76 /* Pods-swift-blackjackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-blackjackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-blackjackTests/Pods-swift-blackjackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D0105741BCEA255005224A6 /* swift-blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-blackjack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0105771BCEA255005224A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D01057C1BCEA255005224A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +52,11 @@
 		4D0105931BCEA255005224A6 /* swift-blackjackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-blackjackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0105971BCEA255005224A6 /* swift_blackjackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_blackjackUITests.swift; sourceTree = "<group>"; };
 		4D0105991BCEA255005224A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D0105A51BCEA5B6005224A6 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4D0105A71BCECCBD005224A6 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_blackjackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7B0612B134632F9DFCB7425 /* Pods_swift_blackjackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_blackjackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD20EFCD7CC55F21556E1C1 /* Pods-swift-blackjackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-blackjackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-blackjackUITests/Pods-swift-blackjackUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3147165D377F9DD8FCD32374 /* Pods_swift_blackjackTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F00103A6E965E956916C86CA /* Pods_swift_blackjackUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +93,8 @@
 				4D01058B1BCEA255005224A6 /* swift-blackjackTests */,
 				4D0105961BCEA255005224A6 /* swift-blackjackUITests */,
 				4D0105751BCEA255005224A6 /* Products */,
+				AF6F7491420FE4F53AA51014 /* Pods */,
+				64D083CC636A091AA2F7DE04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0105771BCEA255005224A6 /* AppDelegate.swift */,
+				4D0105A71BCECCBD005224A6 /* Deck.swift */,
+				4D0105A51BCEA5B6005224A6 /* Card.swift */,
 				4D01057E1BCEA255005224A6 /* Assets.xcassets */,
 				4D01057B1BCEA255005224A6 /* Main.storyboard */,
 				4D0105801BCEA255005224A6 /* LaunchScreen.storyboard */,
@@ -122,6 +140,26 @@
 			path = "swift-blackjackUITests";
 			sourceTree = "<group>";
 		};
+		64D083CC636A091AA2F7DE04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7B0612B134632F9DFCB7425 /* Pods_swift_blackjackTests.framework */,
+				B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF6F7491420FE4F53AA51014 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CD1CC524C2A6DEE231E8B76 /* Pods-swift-blackjackTests.debug.xcconfig */,
+				25AA0035E2CEB1FBF9A9C406 /* Pods-swift-blackjackTests.release.xcconfig */,
+				21C1781C9D3CF1E31C22AA0C /* Pods-swift-blackjackUITests.debug.xcconfig */,
+				FBD20EFCD7CC55F21556E1C1 /* Pods-swift-blackjackUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D01059F1BCEA255005224A6 /* Build configuration list for PBXNativeTarget "swift-blackjackTests" */;
 			buildPhases = (
+				CC3B7A807602C07657501D20 /* Check Pods Manifest.lock */,
 				4D0105841BCEA255005224A6 /* Sources */,
 				4D0105851BCEA255005224A6 /* Frameworks */,
 				4D0105861BCEA255005224A6 /* Resources */,
+				D4C8A0FF889E9F987D99E39F /* Embed Pods Frameworks */,
+				45907D06F08CD3390B87EE1A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D0105A21BCEA255005224A6 /* Build configuration list for PBXNativeTarget "swift-blackjackUITests" */;
 			buildPhases = (
+				789D90FD8C25AE36F4ACA3A1 /* Check Pods Manifest.lock */,
 				4D01058F1BCEA255005224A6 /* Sources */,
 				4D0105901BCEA255005224A6 /* Frameworks */,
 				4D0105911BCEA255005224A6 /* Resources */,
+				9A44BA1A06310E667AF311AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,12 +290,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45907D06F08CD3390B87EE1A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-blackjackTests/Pods-swift-blackjackTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		789D90FD8C25AE36F4ACA3A1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A44BA1A06310E667AF311AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-blackjackUITests/Pods-swift-blackjackUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC3B7A807602C07657501D20 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C8A0FF889E9F987D99E39F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-swift-blackjackTests/Pods-swift-blackjackTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D0105701BCEA255005224A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0105A81BCECCBD005224A6 /* Deck.swift in Sources */,
 				4D0105781BCEA255005224A6 /* AppDelegate.swift in Sources */,
+				4D0105A61BCEA5B6005224A6 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +535,7 @@
 		};
 		4D0105A01BCEA255005224A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CD1CC524C2A6DEE231E8B76 /* Pods-swift-blackjackTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "swift-blackjackTests/Info.plist";
@@ -424,6 +548,7 @@
 		};
 		4D0105A11BCEA255005224A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25AA0035E2CEB1FBF9A9C406 /* Pods-swift-blackjackTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "swift-blackjackTests/Info.plist";
@@ -436,6 +561,7 @@
 		};
 		4D0105A31BCEA255005224A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21C1781C9D3CF1E31C22AA0C /* Pods-swift-blackjackUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "swift-blackjackUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -448,6 +574,7 @@
 		};
 		4D0105A41BCEA255005224A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD20EFCD7CC55F21556E1C1 /* Pods-swift-blackjackUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "swift-blackjackUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

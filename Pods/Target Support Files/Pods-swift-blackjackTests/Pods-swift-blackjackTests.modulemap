@@ -1,0 +1,6 @@
+framework module Pods_swift_blackjackTests {
+  umbrella header "Pods-swift-blackjackTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
