@@ -36,14 +36,23 @@ class DeckSpec: QuickSpec {
             }
             
             describe("shuffle") {
-                it("") {
+                it("should change the order of the cards") {
+                    deck.shuffle()
+                    let card = deck.drawCard()
                     
+                    expect(card.cardLabel).notTo(match("♠︎A"))
                 }
             }
             
             describe("reshuffle") {
-                it("") {
+                it("should change the order of the cards without including dealt cards") {
+                    let card = deck.drawCard()
+                    deck.reshuffle()
+                    let newCard = deck.drawCard()
                     
+                    expect(card.cardLabel).to(match("♠︎A"))
+                    expect(newCard.cardLabel).notTo(match("♠︎2"))
+                    expect(deck.debugDescription).to(contain("remainingCards: 50"))
                 }
             }
         }

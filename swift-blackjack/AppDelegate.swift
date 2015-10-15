@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            house.cards.append(deck.drawCard())
 //            print(house)
 //        }
-        self.playBlackjack(20)
+        //self.playBlackjack(20)
         
         return true
     }

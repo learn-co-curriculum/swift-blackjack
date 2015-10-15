@@ -44,7 +44,7 @@ class Player: CustomDebugStringConvertible {
         for card in cards {
             score += card.cardValue
         }
-        if self.hasAce() && handscore <= 11 {
+        if self.hasAce() && score <= 11 {
             score += 10
         }
         return score
@@ -52,12 +52,20 @@ class Player: CustomDebugStringConvertible {
     
     private func hasAce() -> Bool {
         // this for-in loop causes intermittent crashes (infinite multithreading)
+        
         for card in cards {
             if card.rank == "A" {
                 return true
             }
         }
         return false
+        
+//        for card in cards {
+//            if card.rank == "A" {
+//                return true
+//            }
+//        }
+//        return false
     }
     
     func canPlaceBet(bet: UInt) -> Bool {
