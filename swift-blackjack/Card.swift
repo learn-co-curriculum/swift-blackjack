@@ -14,7 +14,7 @@ class Card: CustomDebugStringConvertible {
     private(set) var cardLabel = ""
     private(set) var cardValue: UInt = 0
     
-    var debugDescription: String { return self.cardLabel }
+    var debugDescription: String { return cardLabel }
     
     init (suit: String, rank: String) {
         self.suit = suit

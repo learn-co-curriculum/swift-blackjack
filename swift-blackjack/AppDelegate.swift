@@ -13,35 +13,62 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let dealer = Dealer.init()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let deck = Deck.init()
-        print(deck)
-        
-        deck.shuffle()
-        print(deck)
-        
-//        for var count = 0; count < 52; count++ {
-//            let card = deck.drawNextCard()
-//            print("card \(card)")
-//            print(deck)
+//        let deck = Deck.init()
+//        print(deck)
+//        
+//        deck.shuffle()
+//        print(deck)
+//        
+////        for var count = 0; count < 52; count++ {
+////            let card = deck.drawNextCard()
+////            print("card \(card)")
+////            print(deck)
+////        }
+//        
+//        let house = House.init(name: "House")
+//        
+//        house.cards.append(deck.drawCard())
+//        house.cards.append(deck.drawCard())
+//        print(house)
+//        
+//        while house.mustHit() {
+//            house.cards.append(deck.drawCard())
+//            print(house)
 //        }
-        
-        let house = House.init(name: "House")
-        
-        house.cards.append(deck.drawCard())
-        house.cards.append(deck.drawCard())
-        print(house)
-        
-        while house.mustHit() {
-            house.cards.append(deck.drawCard())
-            print(house)
-        }
+        self.playBlackjack(20)
         
         return true
+    }
+    
+    func playBlackjack(bet: UInt) {
+        let goodBet = dealer.placeBet(bet)
+        if !goodBet {
+            return
+        }
+        print("The bet is \(bet)")
+        
+        print("Deal!")
+        dealer.deal()
+        print(dealer.house)
+        print(dealer.player)
+        
+        for var i = 2; i <= 5; i++ {
+            dealer.playerTurn()
+            if !dealer.player.busted {
+                dealer.houseTurn()
+            }
+        }
+        
+        print("--End of the hand--")
+        let award = dealer.award()
+        print(award)
+        print(dealer.house)
+        print(dealer.player)
     }
 
     func applicationWillResignActive(application: UIApplication) {

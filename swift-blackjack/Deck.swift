@@ -29,22 +29,22 @@ class Deck: CustomDebugStringConvertible {
     func getDebugDescription() -> String {
         var debug = "Deck"
         debug += "\n  remainingCards: "
-        debug += descriptionForCardArray(self.remainingCards)
+        debug += descriptionForCardArray(remainingCards)
         debug += "\n  dealtCards: "
-        debug += descriptionForCardArray(self.dealtCards)
+        debug += descriptionForCardArray(dealtCards)
         
         return debug
     }
     
     
     func drawCard() -> Card {
-        let card = self.remainingCards.removeFirst()
+        let card = remainingCards.removeFirst()
         self.dealtCards.append(card)
         return card
     }
     
     func shuffle() {
-        self.remainingCards.appendContentsOf(self.dealtCards)
+        self.remainingCards.appendContentsOf(dealtCards)
         self.dealtCards.removeAll()
         self.reshuffle()
     }
@@ -52,12 +52,12 @@ class Deck: CustomDebugStringConvertible {
     func reshuffle() {
         var shuffledCards : [Card] = []
         
-        let limit = self.remainingCards.count
+        let limit = remainingCards.count
         
         for var count = 0; count < limit; count++ {
-            let randomIndex = Int(arc4random_uniform(UInt32(self.remainingCards.count)))
+            let randomIndex = Int(arc4random_uniform(UInt32(remainingCards.count)))
             
-            let randomCard = self.remainingCards.removeAtIndex(randomIndex)
+            let randomCard = remainingCards.removeAtIndex(randomIndex)
             shuffledCards.append(randomCard)
         }
         

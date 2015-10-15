@@ -18,6 +18,7 @@
 		4D0105A81BCECCBD005224A6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105A71BCECCBD005224A6 /* Deck.swift */; settings = {ASSET_TAGS = (); }; };
 		4D0105AC1BCEE541005224A6 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105AB1BCEE541005224A6 /* House.swift */; settings = {ASSET_TAGS = (); }; };
 		4D0105AE1BCEE5DB005224A6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105AD1BCEE5DB005224A6 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
+		4D0105B01BCF2C6E005224A6 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105AF1BCF2C6E005224A6 /* Dealer.swift */; settings = {ASSET_TAGS = (); }; };
 		F00103A6E965E956916C86CA /* Pods_swift_blackjackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		4D0105A71BCECCBD005224A6 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		4D0105AB1BCEE541005224A6 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		4D0105AD1BCEE5DB005224A6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D0105AF1BCF2C6E005224A6 /* Dealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_blackjackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B0612B134632F9DFCB7425 /* Pods_swift_blackjackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_blackjackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD20EFCD7CC55F21556E1C1 /* Pods-swift-blackjackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-blackjackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-blackjackUITests/Pods-swift-blackjackUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0105771BCEA255005224A6 /* AppDelegate.swift */,
+				4D0105AF1BCF2C6E005224A6 /* Dealer.swift */,
 				4D0105AD1BCEE5DB005224A6 /* Player.swift */,
 				4D0105AB1BCEE541005224A6 /* House.swift */,
 				4D0105A71BCECCBD005224A6 /* Deck.swift */,
@@ -381,6 +384,7 @@
 			files = (
 				4D0105A81BCECCBD005224A6 /* Deck.swift in Sources */,
 				4D0105781BCEA255005224A6 /* AppDelegate.swift in Sources */,
+				4D0105B01BCF2C6E005224A6 /* Dealer.swift in Sources */,
 				4D0105AC1BCEE541005224A6 /* House.swift in Sources */,
 				4D0105AE1BCEE5DB005224A6 /* Player.swift in Sources */,
 				4D0105A61BCEA5B6005224A6 /* Card.swift in Sources */,

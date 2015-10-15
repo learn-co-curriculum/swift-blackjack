@@ -11,14 +11,13 @@ import Foundation
 class Player: CustomDebugStringConvertible {
     let name : String
     var cards : [Card] = []
-    
     var handscore: UInt { return self.getHandscore() }
+
     var blackjack: Bool { return self.isBlackjack() }
     var busted: Bool { return self.isBusted() }
-    
     var stayed: Bool = false
-    private(set) var wallet: UInt = 100
-    var bet: UInt = 10
+    
+    var wallet: UInt = 100
 
     var debugDescription: String { return self.getDebugDescription() }
     
@@ -27,10 +26,14 @@ class Player: CustomDebugStringConvertible {
     }
     
     func getDebugDescription() -> String{
-        var debug = "Player: \(self.name)"
+        var debug = "Player: \(name)"
         debug += "\n  cardsInHand: "
-        debug += descriptionForCardArray(self.cards)
-        debug += "\n  handscore: \(self.handscore)"
+        debug += descriptionForCardArray(cards)
+        debug += "\n  handscore: \(handscore)"
+        debug += "\n    blackjack: \(blackjack)"
+        debug += "\n    busted   : \(busted)"
+        debug += "\n    stayed   : \(stayed)"
+        debug += "\n    wallet: \(wallet)"
         return debug
     }
     
@@ -47,6 +50,7 @@ class Player: CustomDebugStringConvertible {
     }
     
     private func hasAce() -> Bool {
+        // this for-in loop causes intermittent crashes (infinite multithreading)
         for card in cards {
             if card.rank == "A" {
                 return true
@@ -63,19 +67,19 @@ class Player: CustomDebugStringConvertible {
         return handscore > 21
     }
     
-    func canPlaceBet() -> Bool {
-        return wallet > bet
-    }
-    
     func mayHit() -> Bool {
         return !blackjack && !busted && !stayed
     }
     
-    func didWin() {
+    func canPlaceBet(bet: UInt) -> Bool {
+        return wallet >= bet
+    }
+    
+    func didWin(bet: UInt) {
         wallet += bet
     }
     
-    func didLose() {
+    func didLose(bet: UInt) {
         wallet -= bet
     }
     
