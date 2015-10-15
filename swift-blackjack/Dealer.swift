@@ -9,9 +9,9 @@
 import Foundation
 
 class Dealer {
-    let deck = Deck.init()
-    let house = House.init(name: "House")
-    let player = House.init(name: "Player")
+    let deck = Deck()
+    let house = House(name: "House")
+    let player = House(name: "Player")
     var bet: UInt = 0
     
     func placeBet(bet: UInt) -> Bool {
@@ -36,7 +36,7 @@ class Dealer {
     }
     
     func playerTurn() {
-        if player.mayHit() {
+        if player.mayHit {
             print("Player's turn")
             if player.mustHit() {
                 player.cards.append(deck.drawCard())
@@ -50,7 +50,7 @@ class Dealer {
     }
     
     func houseTurn() {
-        if house.mayHit() {
+        if house.mayHit {
             print("House's turn:")
             if house.mustHit() {
                 house.cards.append(deck.drawCard())
@@ -114,6 +114,4 @@ class Dealer {
         }
     }
 }
-
-
 

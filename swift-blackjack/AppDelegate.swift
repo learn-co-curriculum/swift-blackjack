@@ -13,7 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let dealer = Dealer.init()
+    let dealer = Dealer()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(dealer.house)
         print(dealer.player)
         
-        for var i = 2; i <= 5; i++ {
+        for var i = 2; i < 5; i++ {
             dealer.playerTurn()
             if !dealer.player.busted {
                 dealer.houseTurn()

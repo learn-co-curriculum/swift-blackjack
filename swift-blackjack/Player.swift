@@ -13,9 +13,10 @@ class Player: CustomDebugStringConvertible {
     var cards : [Card] = []
     var handscore: UInt { return self.getHandscore() }
 
-    var blackjack: Bool { return self.isBlackjack() }
-    var busted: Bool { return self.isBusted() }
+    var blackjack: Bool { return handscore == 21 && cards.count == 2 }
+    var busted: Bool { return handscore > 21 }
     var stayed: Bool = false
+    var mayHit: Bool { return !blackjack && !busted && !stayed }
     
     var wallet: UInt = 100
 
@@ -57,18 +58,6 @@ class Player: CustomDebugStringConvertible {
             }
         }
         return false
-    }
-    
-    func isBlackjack() -> Bool {
-        return handscore == 21 && cards.count == 2
-    }
-    
-    func isBusted() -> Bool {
-        return handscore > 21
-    }
-    
-    func mayHit() -> Bool {
-        return !blackjack && !busted && !stayed
     }
     
     func canPlaceBet(bet: UInt) -> Bool {

@@ -16,7 +16,7 @@ class Card: CustomDebugStringConvertible {
     
     var debugDescription: String { return cardLabel }
     
-    init (suit: String, rank: String) {
+    init(suit: String, rank: String) {
         self.suit = suit
         self.rank = rank
         self.cardLabel = "\(suit)\(rank)"
@@ -44,3 +44,17 @@ class Card: CustomDebugStringConvertible {
         }
     }
 }
+
+func descriptionForCardArray(cardArray: [Card]) -> String {
+    var description = "\(cardArray.count)"
+    var count = 0
+    for card in cardArray {
+        if count % 13 == 0 {
+            description += "\n   "
+        }
+        description += " \(card.debugDescription)"
+        count++
+    }
+    return description
+}
+

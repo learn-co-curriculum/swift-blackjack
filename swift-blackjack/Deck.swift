@@ -14,11 +14,11 @@ class Deck: CustomDebugStringConvertible {
     
     var debugDescription: String { return self.getDebugDescription() }
     
-    init () {
+    init() {
         var cards : [Card] = []
         for suit in Card.validSuits() {
             for rank in Card.validRanks() {
-                let card = Card.init(suit: suit, rank: rank)
+                let card = Card(suit: suit, rank: rank)
                 cards.append(card)
             }
         }
@@ -61,21 +61,7 @@ class Deck: CustomDebugStringConvertible {
             shuffledCards.append(randomCard)
         }
         
-        self.remainingCards = shuffledCards
+        remainingCards = shuffledCards
     }
-}
-
-// where does this module function belong?
-func descriptionForCardArray(cardArray: [Card]) -> String {
-    var description = "\(cardArray.count)"
-    var count = 0
-    for card in cardArray {
-        if count % 13 == 0 {
-            description += "\n   "
-        }
-        description += " \(card.debugDescription)"
-        count++
-    }
-    return description
 }
 
