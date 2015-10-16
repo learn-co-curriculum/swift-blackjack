@@ -67,9 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(dealer.player)
         
         for var i = 2; i < 5; i++ {
-            dealer.playerTurn()
+            dealer.turn(dealer.player)
             if !dealer.player.busted {
-                dealer.houseTurn()
+                dealer.turn(dealer.house)
             }
         }
         

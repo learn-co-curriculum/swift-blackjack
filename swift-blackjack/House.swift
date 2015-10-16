@@ -3,13 +3,12 @@
 import Foundation
 
 class House: Player {
+    
+    var mustHit: Bool { return handscore < 17 }
+    
     override init(name: String) {
         super.init(name: name)
         wallet = 1000
-    }
-    
-    func mustHit() -> Bool {
-        return handscore <= 16
     }
 }
 

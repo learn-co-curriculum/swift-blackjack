@@ -22,9 +22,9 @@ class Deck: CustomDebugStringConvertible {
     
     func getDebugDescription() -> String {
         var debug = "Deck"
-        debug += "\n  remainingCards: "
+        debug += "\n  Cards Remaining: "
         debug += descriptionForCardArray(remainingCards)
-        debug += "\n  dealtCards: "
+        debug += "\n  Cards Dealt: "
         debug += descriptionForCardArray(dealtCards)
         
         return debug
@@ -32,7 +32,7 @@ class Deck: CustomDebugStringConvertible {
 
     
     func drawCard() -> Card {
-        let card = remainingCards.removeFirst()
+        let card = remainingCards.removeLast()
         self.dealtCards.append(card)
         return card
     }

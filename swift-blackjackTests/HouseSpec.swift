@@ -34,7 +34,7 @@ class HouseSpec: QuickSpec {
                     house.cards.append(sixOfClubs)
                     
                     expect(house.handscore).to(equal(16))
-                    expect(house.mustHit()).to(beTrue())
+                    expect(house.mustHit).to(beTrue())
                 }
                 
                 it("should return false if the handscore is 17") {
@@ -42,7 +42,7 @@ class HouseSpec: QuickSpec {
                     house.cards.append(sevenOfClubs)
                     
                     expect(house.handscore).to(equal(17))
-                    expect(house.mustHit()).to(beFalse())
+                    expect(house.mustHit).to(beFalse())
                 }
             }
         }

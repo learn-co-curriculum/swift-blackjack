@@ -31,30 +31,16 @@ class Dealer {
         }
     }
     
-    func playerTurn() {
-        if player.mayHit {
-            print("Player's turn")
-            if player.mustHit() {
-                player.cards.append(deck.drawCard())
-                print("Player hits!")
-                print(player)
-            } else {
-                player.stayed = true
-                print("Player stays!")
-            }
-        }
-    }
-    
-    func houseTurn() {
+    func turn(house: House) {
         if house.mayHit {
-            print("House's turn:")
-            if house.mustHit() {
+            print("\(house.name)'s turn:")
+            if house.mustHit {
                 house.cards.append(deck.drawCard())
-                print("House hits!")
+                print("\(house.name) hits!")
                 print(house)
             } else {
                 house.stayed = true
-                print("House stays!")
+                print("\(house.name) stays!")
             }
         }
     }

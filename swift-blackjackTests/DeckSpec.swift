@@ -16,16 +16,16 @@ class DeckSpec: QuickSpec {
             
             describe("initializer") {
                 it("should set up the deck with 52 undealt cards") {
-                    expect(deck.debugDescription).to(contain("remainingCards: 52"))
-                    expect(deck.debugDescription).to(contain("dealtCards: 0"))
+                    expect(deck.debugDescription).to(contain("Cards Remaining: 52"))
+                    expect(deck.debugDescription).to(contain("Cards Dealt: 0"))
                 }
             }
             
             describe("drawCard") {
-                it("should return an ace of spades from a fresh deck") {
+                it("should return the King of Clubs from a fresh deck") {
                     let card = deck.drawCard()
                     
-                    expect(card.cardLabel).to(match("♠︎A"))
+                    expect(card.cardLabel).to(match("♣︎K"))
                 }
             }
             
@@ -34,9 +34,11 @@ class DeckSpec: QuickSpec {
                     deck.shuffle()
                     let card1 = deck.drawCard()
                     let card2 = deck.drawCard()
+                    let card3 = deck.drawCard()
                     
-                    if card1.cardLabel == "♠︎A" {
-                        expect(card2.cardLabel).notTo(match("♠︎2"))
+                    if card1.cardLabel == "♣︎K" && card2.cardLabel == "♣︎Q" {
+                        // this test has a 1 in 132,600 chance of randomly failing
+                        expect(card3.cardLabel).notTo(match("♣︎J"))
                     }
                 }
             }
@@ -47,9 +49,9 @@ class DeckSpec: QuickSpec {
                     deck.reshuffle()
                     let newCard = deck.drawCard()
                     
-                    expect(card.cardLabel).to(match("♠︎A"))
-                    expect(newCard.cardLabel).notTo(match("♠︎2"))
-                    expect(deck.debugDescription).to(contain("remainingCards: 50"))
+                    expect(card.cardLabel).to(match("♣︎K"))
+                    expect(newCard.cardLabel).notTo(match("♣︎Q"))
+                    expect(deck.debugDescription).to(contain("Cards Remaining: 50"))
                 }
             }
         }

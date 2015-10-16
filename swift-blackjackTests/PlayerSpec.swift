@@ -26,6 +26,21 @@ class PlayerSpec: QuickSpec {
                 }
             }
             
+            
+            describe("debugDescription") {
+                it("returns a readout of the Player instance") {
+                    let debug = player.debugDescription
+                    
+                    expect(debug.lowercaseString).to(contain("player"))
+                    expect(debug.lowercaseString).to(contain("cards"))
+                    expect(debug.lowercaseString).to(contain("handscore"))
+                    expect(debug.lowercaseString).to(contain("blackjack"))
+                    expect(debug.lowercaseString).to(contain("busted"))
+                    expect(debug.lowercaseString).to(contain("stayed"))
+                    expect(debug.lowercaseString).to(contain("wallet"))
+                }
+            }
+            
             describe("cards property array") {
                 it("can accept a Card object") {
                     player.cards.append(aceOfSpades)
@@ -259,20 +274,6 @@ class PlayerSpec: QuickSpec {
                     player.didPush()
                     
                     expect(player.wallet).to(equal(wallet))
-                }
-            }
-            
-            describe("debugDescription") {
-                it("returns a readout of the Player instance") {
-                    let debug = player.debugDescription
-                    
-                    expect(debug.lowercaseString).to(contain("player"))
-                    expect(debug.lowercaseString).to(contain("cards"))
-                    expect(debug.lowercaseString).to(contain("handscore"))
-                    expect(debug.lowercaseString).to(contain("blackjack"))
-                    expect(debug.lowercaseString).to(contain("busted"))
-                    expect(debug.lowercaseString).to(contain("stayed"))
-                    expect(debug.lowercaseString).to(contain("wallet"))
                 }
             }
         }
