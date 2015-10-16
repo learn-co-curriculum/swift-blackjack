@@ -1,10 +1,4 @@
-//
 //  DeckSpec.swift
-//  swift-blackjack
-//
-//  Created by Mark Murray on 10/15/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import Quick
 import Nimble
@@ -38,9 +32,12 @@ class DeckSpec: QuickSpec {
             describe("shuffle") {
                 it("should change the order of the cards") {
                     deck.shuffle()
-                    let card = deck.drawCard()
+                    let card1 = deck.drawCard()
+                    let card2 = deck.drawCard()
                     
-                    expect(card.cardLabel).notTo(match("♠︎A"))
+                    if card1.cardLabel == "♠︎A" {
+                        expect(card2.cardLabel).notTo(match("♠︎2"))
+                    }
                 }
             }
             

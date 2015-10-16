@@ -1,10 +1,4 @@
-//
 //  DealerSpec.swift
-//  swift-blackjack
-//
-//  Created by Mark Murray on 10/15/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import Quick
 import Nimble
@@ -55,35 +49,321 @@ class DealerSpec: QuickSpec {
             }
             
             describe("deal") {
-                it("") {
+                it("should set the house's and player's stayed bool to false") {
+                    dealer.house.stayed = true
+                    dealer.player.stayed = true
+                    dealer.deal()
                     
+                    expect(dealer.house.stayed).to(beFalse())
+                    expect(dealer.player.stayed).to(beFalse())
+                }
+                
+                it("should add two cards each to the house's and player's cards arrays") {
+                    dealer.deal()
+                    
+                    expect(dealer.house.cards.count).to(equal(2))
+                    expect(dealer.player.cards.count).to(equal(2))
+                }
+                
+                it("should empty the cards in the house's and player's cards arrays before dealing new cards") {
+                    dealer.deal()
+                    dealer.deal()
+                    
+                    expect(dealer.house.cards.count).to(equal(2))
+                    expect(dealer.player.cards.count).to(equal(2))
+                }
+                
+                it("should shuffle the deck before dealing") {
+                    dealer.deal()
+                    
+                    let card1 = dealer.deck.drawCard()
+                    let card2 = dealer.deck.drawCard()
+                    
+                    if card1.suit == card2.suit {
+                        expect(card1.cardValue).toNot(equal(card2.cardValue - 1))
+                        expect(card1.cardValue).toNot(equal(card2.cardValue + 1))
+                    }
                 }
             }
+            
+            let aceOfSpades : Card = Card(suit: "♠︎", rank: "A")
+            let aceOfHearts : Card = Card(suit: "♥︎", rank: "A")
+            let queenOfHearts : Card = Card(suit: "♥︎", rank: "Q")
+            let tenOfDiamonds : Card = Card(suit: "♦︎", rank: "10")
+            let twoOfClubs : Card = Card(suit: "♣︎", rank: "2")
+            let sixOfClubs = Card(suit: "♣︎", rank: "6")
+            let sevenOfClubs = Card(suit: "♣︎", rank: "7")
 
             describe("playerTurn") {
-                it("") {
+                it("should not offer the player a card if the player has busted") {
+                    dealer.player.cards.append(queenOfHearts)
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(twoOfClubs)
+                    dealer.playerTurn()
                     
+                    expect(dealer.player.busted).to(beTrue())
+                    expect(dealer.player.cards.count).to(equal(3))
+                }
+                
+                it("should not offer the player a card if the player has stayed") {
+                    dealer.player.stayed = true
+                    dealer.playerTurn()
+                    
+                    expect(dealer.player.cards.count).to(equal(0))
+                }
+                
+                it("should not offer the player a card if the player has a blackjack") {
+                    dealer.player.cards.append(queenOfHearts)
+                    dealer.player.cards.append(aceOfSpades)
+                    dealer.playerTurn()
+                    
+                    expect(dealer.player.blackjack).to(beTrue())
+                    expect(dealer.player.cards.count).to(equal(2))
+                }
+                
+                it("should not give the player a card if the player chooses to stay") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sevenOfClubs)
+                    dealer.playerTurn()
+                    
+                    expect(dealer.player.cards.count).to(equal(2))
+                }
+                
+                it("should give the player a card if the player chooses to hit") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.playerTurn()
+                    
+                    expect(dealer.player.cards.count).to(equal(3))
                 }
             }
 
             describe("houseTurn") {
-                it("") {
+                it("should not offer the house a card if the house has busted") {
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.house.cards.append(twoOfClubs)
+                    dealer.houseTurn()
                     
+                    expect(dealer.house.busted).to(beTrue())
+                    expect(dealer.house.cards.count).to(equal(3))
+                }
+                
+                it("should not offer the house a card if the house has stayed") {
+                    dealer.house.stayed = true
+                    dealer.houseTurn()
+                    
+                    expect(dealer.house.cards.count).to(equal(0))
+                }
+                
+                it("should not offer the house a card if the house has a blackjack") {
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.houseTurn()
+                    
+                    expect(dealer.house.blackjack).to(beTrue())
+                    expect(dealer.house.cards.count).to(equal(2))
+                }
+                
+                it("should not give the house a card if the house must stay") {
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.house.cards.append(sevenOfClubs)
+                    dealer.houseTurn()
+                    
+                    expect(dealer.house.cards.count).to(equal(2))
+                }
+                
+                it("should give the house a card if the house must hit") {
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.house.cards.append(sixOfClubs)
+                    dealer.houseTurn()
+                    
+                    expect(dealer.house.cards.count).to(equal(3))
                 }
             }
             
             describe("winner") {
-                it("") {
+                it("should return 'push' if the house and player both have blackjacks") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
                     
+                    expect(dealer.winner()).to(match("push"))
+                }
+                
+                it("should return 'player' if the player has blackjack but the house does not") {
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
+                    
+                    expect(dealer.winner()).to(match("player"))
+                }
+
+                it("should return 'house' if the house has blackjack but the player does not") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    
+                    expect(dealer.winner()).to(match("house"))
+                }
+
+                
+                it("should return 'house' if the player busted") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(queenOfHearts)
+                    dealer.player.cards.append(twoOfClubs)
+                    
+                    expect(dealer.winner()).to(match("house"))
+                }
+
+                it("should return 'player' if the house busted") {
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(twoOfClubs)
+                    
+                    expect(dealer.winner()).to(match("player"))
+                }
+
+                it("should return 'player' if the player holds five cards without busting") {
+                    dealer.player.cards.append(aceOfSpades)
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(twoOfClubs)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.player.cards.append(tenOfDiamonds)
+                    
+                    expect(dealer.winner()).to(match("player"))
+                }
+
+                it("should return 'player' if the house and player have stayed and player's score exceeds the house's score") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.player.cards.append(twoOfClubs)
+                    dealer.player.stayed = true
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(sevenOfClubs)
+                    dealer.house.stayed = true
+                    
+                    expect(dealer.winner()).to(match("player"))
+                }
+
+                it("should return 'house' if the house and player have stayed and player's score does not exceed the house's score") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.player.cards.append(twoOfClubs)
+                    dealer.player.stayed = true
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(sevenOfClubs)
+                    dealer.house.cards.append(aceOfHearts)
+                    dealer.house.stayed = true
+                    
+                    expect(dealer.winner()).to(match("house"))
+                }
+                
+                it("should return 'no' if there is not a winner") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(twoOfClubs)
+                    
+                    expect(dealer.winner()).to(match("no"))
                 }
             }
+            
+            let playerWalletStarting = dealer.player.wallet
+            let houseWalletStarting = dealer.house.wallet
 
             describe("award") {
-                it("") {
+                it("should not award the bet if the game is a push") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
                     
+                    let bet: UInt = 20
+                    dealer.bet = bet
+                    dealer.award()
+                    
+                    expect(dealer.player.wallet).to(equal(playerWalletStarting))
+                    expect(dealer.house.wallet).to(equal(houseWalletStarting))
+                }
+                
+                it("should return a string message saying that the game is a push when the game is a push") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
+
+                    let message = dealer.award()
+                    
+                    expect(message.lowercaseString).to(contain("push"))
+                }
+                
+                it("should award the bet to the player's wallet when the player wins") {
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
+                    
+                    let bet: UInt = 20
+                    dealer.bet = bet
+                    dealer.award()
+                    
+                    expect(dealer.player.wallet).to(equal(playerWalletStarting + bet))
+                    expect(dealer.house.wallet).to(equal(houseWalletStarting - bet))
+                }
+                
+                it("should return a string message saying the player won when the player wins") {
+                    dealer.player.cards.append(aceOfHearts)
+                    dealer.player.cards.append(queenOfHearts)
+                    
+                    let message = dealer.award()
+                    
+                    expect(message.lowercaseString).to(contain("player"))
+                }
+                
+                it("should award the bet to the house's wallet when the house wins") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+
+                    let bet: UInt = 20
+                    dealer.bet = bet
+                    dealer.award()
+
+                    expect(dealer.house.wallet).to(equal(houseWalletStarting + bet))
+                    expect(dealer.player.wallet).to(equal(playerWalletStarting - bet))
+                }
+                
+                it("should return a string message saying the house won when the house wins") {
+                    dealer.house.cards.append(aceOfSpades)
+                    dealer.house.cards.append(tenOfDiamonds)
+                    
+                    let message = dealer.award()
+                    
+                    expect(message.lowercaseString).to(contain("house"))
+                }
+                
+                it("should not award the bet if the game is not over") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(twoOfClubs)
+                    
+                    let bet: UInt = 20
+                    dealer.bet = bet
+                    dealer.award()
+                    
+                    expect(dealer.player.wallet).to(equal(playerWalletStarting))
+                    expect(dealer.house.wallet).to(equal(houseWalletStarting))
+                }
+                
+                it("should return a string message saying there is no winner when there is not a winner") {
+                    dealer.player.cards.append(tenOfDiamonds)
+                    dealer.player.cards.append(sixOfClubs)
+                    dealer.house.cards.append(queenOfHearts)
+                    dealer.house.cards.append(twoOfClubs)
+                    
+                    let message = dealer.award()
+                    
+                    expect(message.lowercaseString).to(contain("no"))
                 }
             }
-
         }
     }
 }

@@ -1,10 +1,4 @@
-//
 //  Dealer.swift
-//  swift-blackjack
-//
-//  Created by Mark Murray on 10/14/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import Foundation
 
@@ -26,6 +20,8 @@ class Dealer {
         
     func deal() {
         deck.shuffle()
+        player.cards.removeAll()
+        house.cards.removeAll()
         player.stayed = false
         house.stayed = false
         
@@ -79,7 +75,7 @@ class Dealer {
         if house.busted {
             return "player"
         }
-        if player.cards.count == 5 {
+        if player.cards.count == 5 && !player.busted {
             return "player"
         }
         if house.stayed && player.stayed {

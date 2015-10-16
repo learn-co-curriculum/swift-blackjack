@@ -1,10 +1,4 @@
-//
 //  PlayerSpec.swift
-//  swift-blackjack
-//
-//  Created by Mark Murray on 10/15/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import Quick
 import Nimble
@@ -21,8 +15,6 @@ class PlayerSpec: QuickSpec {
             let queenOfHearts : Card = Card(suit: "♥︎", rank: "Q")
             let tenOfDiamonds : Card = Card(suit: "♦︎", rank: "10")
             let twoOfClubs : Card = Card(suit: "♣︎", rank: "2")
-//            let sixOfClubs = Card(suit: "♣︎", rank: "6")
-//            let sevenOfClubs = Card(suit: "♣︎", rank: "7")
 
             beforeEach({ () -> () in
                 player = Player(name: "Player")

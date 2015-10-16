@@ -1,10 +1,4 @@
-//
 //  Player.swift
-//  swift-blackjack
-//
-//  Created by Mark Murray on 10/14/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import Foundation
 
@@ -51,21 +45,12 @@ class Player: CustomDebugStringConvertible {
     }
     
     private func hasAce() -> Bool {
-        // this for-in loop causes intermittent crashes (infinite multithreading)
-        
         for card in cards {
             if card.rank == "A" {
                 return true
             }
         }
         return false
-        
-//        for card in cards {
-//            if card.rank == "A" {
-//                return true
-//            }
-//        }
-//        return false
     }
     
     func canPlaceBet(bet: UInt) -> Bool {

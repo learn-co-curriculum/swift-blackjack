@@ -20,10 +20,10 @@
 		4D0105AE1BCEE5DB005224A6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105AD1BCEE5DB005224A6 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
 		4D0105B01BCF2C6E005224A6 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105AF1BCF2C6E005224A6 /* Dealer.swift */; settings = {ASSET_TAGS = (); }; };
 		4D0105B21BCF86C4005224A6 /* CardSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0105B11BCF86C3005224A6 /* CardSpec.swift */; settings = {ASSET_TAGS = (); }; };
+		4DA542271BD0572E00EBBC17 /* DealerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB735D1BD0163B004BD6FE /* DealerSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4DCB73561BCFE399004BD6FE /* DeckSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB73551BCFE399004BD6FE /* DeckSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4DCB73581BD015C2004BD6FE /* PlayerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB73571BD015C2004BD6FE /* PlayerSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4DCB735C1BD0161E004BD6FE /* HouseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB735B1BD0161E004BD6FE /* HouseSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		4DCB735E1BD0163B004BD6FE /* DealerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB735D1BD0163B004BD6FE /* DealerSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		F00103A6E965E956916C86CA /* Pods_swift_blackjackUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A420B62E84DF16B0409DDC /* Pods_swift_blackjackUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -411,7 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCB73561BCFE399004BD6FE /* DeckSpec.swift in Sources */,
-				4DCB735E1BD0163B004BD6FE /* DealerSpec.swift in Sources */,
+				4DA542271BD0572E00EBBC17 /* DealerSpec.swift in Sources */,
 				4D01058D1BCEA255005224A6 /* swift_blackjackTests.swift in Sources */,
 				4DCB735C1BD0161E004BD6FE /* HouseSpec.swift in Sources */,
 				4D0105B21BCF86C4005224A6 /* CardSpec.swift in Sources */,
