@@ -27,17 +27,17 @@ class PlayerSpec: QuickSpec {
             }
             
             
-            describe("debugDescription") {
+            describe("description") {
                 it("returns a readout of the Player instance") {
-                    let debug = player.debugDescription
+                    let description = player.description
                     
-                    expect(debug.lowercaseString).to(contain("player"))
-                    expect(debug.lowercaseString).to(contain("cards"))
-                    expect(debug.lowercaseString).to(contain("handscore"))
-                    expect(debug.lowercaseString).to(contain("blackjack"))
-                    expect(debug.lowercaseString).to(contain("busted"))
-                    expect(debug.lowercaseString).to(contain("stayed"))
-                    expect(debug.lowercaseString).to(contain("wallet"))
+                    expect(description.lowercaseString).to(contain("player"))
+                    expect(description.lowercaseString).to(contain("cards"))
+                    expect(description.lowercaseString).to(contain("handscore"))
+                    expect(description.lowercaseString).to(contain("blackjack"))
+                    expect(description.lowercaseString).to(contain("busted"))
+                    expect(description.lowercaseString).to(contain("stayed"))
+                    expect(description.lowercaseString).to(contain("tokens"))
                 }
             }
             
@@ -215,67 +215,68 @@ class PlayerSpec: QuickSpec {
                 }
             }
             
-            describe("wallet property") {
+            describe("tokens property") {
                 it("is initialized to 100") {
-                    expect(player.wallet).to(equal(100))
+                    expect(player.tokens).to(equal(100))
                 }
             }
 
             describe("canPlaceBet") {
-                it("returns true if the wallet is equal to or greater than the bet") {
+                it("returns true if the tokens is equal to or greater than the bet") {
                     expect(player.canPlaceBet(10)).to(beTrue())
                     expect(player.canPlaceBet(100)).to(beTrue())
                 }
                 
-                it("returns false if the wallet is less than the bet") {
+                it("returns false if the tokens is less than the bet") {
                     expect(player.canPlaceBet(101)).to(beFalse())
                 }
             }
             
             describe("didWin") {
-                it("should add 10 to the wallet when the bet is 10") {
-                    let wallet = player.wallet
+                it("should add 10 to the tokens when the bet is 10") {
+                    let tokens = player.tokens
                     let bet: UInt = 10
                     player.didWin(bet)
                     
-                    expect(player.wallet).to(equal(wallet + bet))
+                    expect(player.tokens).to(equal(tokens + bet))
                 }
                 
-                it("should add 20 to the wallet when the bet is 20") {
-                    let wallet = player.wallet
+                it("should add 20 to the tokens when the bet is 20") {
+                    let tokens = player.tokens
                     let bet: UInt = 20
                     player.didWin(bet)
                     
-                    expect(player.wallet).to(equal(wallet + bet))
+                    expect(player.tokens).to(equal(tokens + bet))
                 }
             }
             
             describe("didLose") {
-                it("should subtract 10 from the wallet when the bet is 10") {
-                    let wallet = player.wallet
+                it("should subtract 10 from the tokens when the bet is 10") {
+                    let tokens = player.tokens
                     let bet: UInt = 10
                     player.didLose(bet)
                     
-                    expect(player.wallet).to(equal(wallet - bet))
+                    expect(player.tokens).to(equal(tokens - bet))
                 }
                 
-                it("should subract 20 from the wallet when the bet is 20") {
-                    let wallet = player.wallet
+                it("should subract 20 from the tokens when the bet is 20") {
+                    let tokens = player.tokens
                     let bet: UInt = 20
                     player.didLose(bet)
                     
-                    expect(player.wallet).to(equal(wallet - bet))
+                    expect(player.tokens).to(equal(tokens - bet))
                 }
             }
             
+            /*
             describe("didPush") {
-                it("does not affect the wallet") {
-                    let wallet = player.wallet
+                it("does not affect the tokens") {
+                    let tokens = player.tokens
                     player.didPush()
                     
-                    expect(player.wallet).to(equal(wallet))
+                    expect(player.tokens).to(equal(tokens))
                 }
-            }
+            } */
         }
     }
 }

@@ -2,11 +2,11 @@
 
 import Foundation
 
-class Deck: CustomDebugStringConvertible {
+class Deck {
     private var remainingCards : [Card]
     private var dealtCards : [Card]
     
-    var debugDescription: String { return self.getDebugDescription() }
+    var description: String { return self.getDescription() }
     
     init() {
         var cards : [Card] = []
@@ -20,14 +20,14 @@ class Deck: CustomDebugStringConvertible {
         dealtCards = []
     }
     
-    func getDebugDescription() -> String {
-        var debug = "Deck"
-        debug += "\n  Cards Remaining: "
-        debug += descriptionForCardArray(remainingCards)
-        debug += "\n  Cards Dealt: "
-        debug += descriptionForCardArray(dealtCards)
+    private func getDescription() -> String {
+        var description = "Deck"
+        description += "\n  Cards Remaining: "
+        description += descriptionForCardArray(remainingCards)
+        description += "\n  Cards Dealt: "
+        description += descriptionForCardArray(dealtCards)
         
-        return debug
+        return description
     }
 
     
@@ -40,10 +40,10 @@ class Deck: CustomDebugStringConvertible {
     func shuffle() {
         self.remainingCards.appendContentsOf(dealtCards)
         self.dealtCards.removeAll()
-        self.reshuffle()
+        self.randomize()
     }
     
-    func reshuffle() {
+    private func randomize() {
         var shuffledCards : [Card] = []
         
         let limit = remainingCards.count

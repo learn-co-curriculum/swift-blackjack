@@ -42,12 +42,12 @@ class CardSpec: QuickSpec {
                 }
             }
             
-            describe("debugDescription") {
+            describe("description") {
                 it("should return the cardLabel") {
-                    expect(aceOfSpades.debugDescription).to(equal("♠︎A"))
-                    expect(queenOfHearts.debugDescription).to(equal("♥︎Q"))
-                    expect(tenOfDiamonds.debugDescription).to(equal("♦︎10"))
-                    expect(twoOfClubs.debugDescription).to(equal("♣︎2"))
+                    expect(aceOfSpades.description).to(equal("♠︎A"))
+                    expect(queenOfHearts.description).to(equal("♥︎Q"))
+                    expect(tenOfDiamonds.description).to(equal("♦︎10"))
+                    expect(twoOfClubs.description).to(equal("♣︎2"))
                 }
             }
         }

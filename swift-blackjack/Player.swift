@@ -2,24 +2,24 @@
 
 import Foundation
 
-class Player: CustomDebugStringConvertible {
+class Player {
     let name : String
     var cards : [Card] = []
     var stayed: Bool = false
-    var wallet: UInt = 100
+    var tokens: UInt = 100
     
     var handscore: UInt { return self.getHandscore() }
     var blackjack: Bool { return handscore == 21 && cards.count == 2 }
     var busted: Bool { return handscore > 21 }
     var mayHit: Bool { return !blackjack && !busted && !stayed }
 
-    var debugDescription: String { return self.getDebugDescription() }
+    var description: String { return self.getDebugDescription() }
     
     init(name: String) {
         self.name = name
     }
     
-    func getDebugDescription() -> String{
+    private func getDebugDescription() -> String{
         var debug = "Player: \(name)"
         debug += "\n  cardsInHand: "
         debug += descriptionForCardArray(cards)
@@ -27,7 +27,7 @@ class Player: CustomDebugStringConvertible {
         debug += "\n    blackjack: \(blackjack)"
         debug += "\n    busted   : \(busted)"
         debug += "\n    stayed   : \(stayed)"
-        debug += "\n    wallet: \(wallet)"
+        debug += "\n    tokens: \(tokens)"
         return debug
     }
     
@@ -53,19 +53,21 @@ class Player: CustomDebugStringConvertible {
     }
     
     func canPlaceBet(bet: UInt) -> Bool {
-        return wallet >= bet
+        return tokens >= bet
     }
     
     func didWin(bet: UInt) {
-        wallet += bet
+        tokens += bet
     }
     
     func didLose(bet: UInt) {
-        wallet -= bet
+        tokens -= bet
     }
     
+    /* advanced
     func didPush() {
         // no action
     }
+    */
 }
 

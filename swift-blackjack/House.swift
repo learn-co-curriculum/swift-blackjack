@@ -8,7 +8,7 @@ class House: Player {
     
     override init(name: String) {
         super.init(name: name)
-        wallet = 1000
+        tokens = 1000
     }
 }
 

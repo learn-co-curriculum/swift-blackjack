@@ -46,9 +46,10 @@ class Dealer {
     }
     
     func winner() -> String {
+        /* advanced
         if player.blackjack && house.blackjack {
             return "push"
-        }
+        } */
         if player.blackjack && !house.blackjack {
             return "player"
         }
@@ -77,10 +78,12 @@ class Dealer {
     func award() -> String {
         let winner = self.winner()
         switch winner {
+            /* advanced
             case "push":
                 house.didPush()
                 player.didPush()
                 return "Push!"
+            */
             case "house":
                 house.didWin(bet)
                 player.didLose(bet)

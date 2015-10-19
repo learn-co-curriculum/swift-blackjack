@@ -25,22 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          */
         
-//        let deck = Deck.init()
-//        print(deck)
-//        
-//        deck.shuffle()
-//        print(deck)
+        let deck = Deck.init()
+        print(deck.description)
+        
+        deck.shuffle()
+        print(deck.description)
 
-//        let house = House.init(name: "House")
-//        
-//        house.cards.append(deck.drawCard())
-//        house.cards.append(deck.drawCard())
-//        print(house)
-//        
-//        while house.mustHit() {
-//            house.cards.append(deck.drawCard())
-//            print(house)
-//        }
+        let house = House.init(name: "House")
+        
+        house.cards.append(deck.drawCard())
+        house.cards.append(deck.drawCard())
+        print(house.description)
+        
+        while house.mustHit {
+            house.cards.append(deck.drawCard())
+            print(house.description)
+        }
         
         self.playBlackjack(20)
         
@@ -63,8 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Deal!")
         dealer.deal()
-        print(dealer.house)
-        print(dealer.player)
+        print(dealer.house.description)
+        print(dealer.player.description)
         
         for var i = 2; i < 5; i++ {
             dealer.turn(dealer.player)
@@ -76,8 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("--End of the hand--")
         let award = dealer.award()
         print(award)
-        print(dealer.house)
-        print(dealer.player)
+        print(dealer.house.description)
+        print(dealer.player.description)
     }
 
 // do not delete

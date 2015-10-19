@@ -23,8 +23,8 @@ class HouseSpec: QuickSpec {
                     expect(house.name).to(match("House"))
                 }
                 
-                it("overrides the super class's default value for wallet") {
-                    expect(house.wallet).to(equal(1000))
+                it("overrides the super class's default value for tokens") {
+                    expect(house.tokens).to(equal(1000))
                 }
             }
             

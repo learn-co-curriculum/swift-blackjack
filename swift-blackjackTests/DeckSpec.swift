@@ -16,8 +16,8 @@ class DeckSpec: QuickSpec {
             
             describe("initializer") {
                 it("should set up the deck with 52 undealt cards") {
-                    expect(deck.debugDescription).to(contain("Cards Remaining: 52"))
-                    expect(deck.debugDescription).to(contain("Cards Dealt: 0"))
+                    expect(deck.description).to(contain("Cards Remaining: 52"))
+                    expect(deck.description).to(contain("Cards Dealt: 0"))
                 }
             }
             
@@ -40,18 +40,6 @@ class DeckSpec: QuickSpec {
                         // this test has a 1 in 132,600 chance of randomly failing
                         expect(card3.cardLabel).notTo(match("♣︎J"))
                     }
-                }
-            }
-            
-            describe("reshuffle") {
-                it("should change the order of the cards without including dealt cards") {
-                    let card = deck.drawCard()
-                    deck.reshuffle()
-                    let newCard = deck.drawCard()
-                    
-                    expect(card.cardLabel).to(match("♣︎K"))
-                    expect(newCard.cardLabel).notTo(match("♣︎Q"))
-                    expect(deck.debugDescription).to(contain("Cards Remaining: 50"))
                 }
             }
         }
