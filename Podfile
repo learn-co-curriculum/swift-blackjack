@@ -4,8 +4,8 @@
 use_frameworks! # using Swift
 
 def testing_pods
-  pod 'Quick', '~> 0.6'
-  pod 'Nimble', '~> 2.0'
+  pod 'Quick', '~> 0.8.0'
+  pod 'Nimble', '~> 3.0.0'
 end
 
 target 'swift-blackjack' do

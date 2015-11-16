@@ -1,10 +1,4 @@
-//
 //  swift_blackjackTests.swift
-//  swift-blackjackTests
-//
-//  Created by Mark Murray on 10/14/15.
-//  Copyright © 2015 Flatiron School. All rights reserved.
-//
 
 import XCTest
 @testable import swift_blackjack
